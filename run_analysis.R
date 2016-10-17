@@ -28,11 +28,11 @@ names(label) = c("label")
 data <- cbind(subject, label, nx)
 
 # Compute the means, grouped by subject/label
-melted <- melt(data, id.var = c("subject", "label"))
-means <- dcast(melted , subject + label ~ variable, mean)
+melted = melt(data, id.var = c("subject", "label"))
+means = dcast(melted , subject + label ~ variable, mean)
 
 # Save the resulting dataset
-write.table(means, file="./tidy_data.txt")
+write.table(means, file="./tidy_data.txt", row.names = FALSE)
 
 # Output final dataset
 means
